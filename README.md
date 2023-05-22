@@ -18,11 +18,8 @@ QiZhen: Tuning LLM Model With Chinese Medical KnowledgeBase and Instructions
 ## 常见问题
 
 ## 项目组织
-项目发起单位为：[创业慧康科技股份有限公司](https://www.bsoft.com.cn)，[浙江大学计算机创新技术研究院]()，[联众智慧科技股份有限公司](http://www.mediinfo.com.cn)，[浙江网新健康科技有限公司]()。
 
-项目实施单位：[浙江创联网捷科技有限公司]()，[浙江大学计算机创新技术研究院]()。
-
-项目由浙江大学[陈刚]()教授担任总顾问，浙江大学[姚畅](https://person.zju.edu.cn/changyao)研究员担任技术负责人，浙江大学计算机创新技术研究院[相鹏]()主任担任首席医学专家。本开源版本的核心贡献者还包括：[王贵宣]()、[王成]()、[张适可]()，[许振影]()等。
+项目的核心开发者包括，[姚畅](https://person.zju.edu.cn/changyao)，[相鹏]()，[王贵宣]()、[王成]()等。
 
 
 ## 致谢
