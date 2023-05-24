@@ -34,7 +34,8 @@ QiZhen: Tuning LLM Model With Chinese Medical KnowledgeBase and Instructions
 
 |          模型           | 指令数据集 |      Base Model       |                           LoRA下载                           |
 | :---------------------: | :--------: | :-------------------: | :----------------------------------------------------------: |
-| QiZhen- Checkpoint-3500 |    740K    | Chinese-LLaMA-Plus-7B | [百度网盘](链接: https://pan.baidu.com/s/1KQIF-dUsL7Nrj8UeNuFUiw?pwd=ivgg 提取码: ivgg <br/>--来自百度网盘超级会员v4的分享) |
+| QiZhen- Checkpoint-3500 |    740K    | Chinese-LLaMA-Plus-7B | [百度网盘](链接: https://pan.baidu.com/s/1KQIF-dUsL7Nrj8UeNuFUiw?pwd=ivgg) |
+| QiZhen- Checkpoint-6000 |    740K    | Chinese-LLaMA-Plus-7B | [百度网盘](https://pan.baidu.com/s/1KQIF-dUsL7Nrj8UeNuFUiw?pwd=ivgg) |
 
 ## A Quick Start
 
@@ -113,7 +114,10 @@ python gradio_demo.py
 | :------------------------: | :---------: | :---------: | :---------: |
 |          ChatGLM           |    39.36    |    23.16    |    14.74    |
 |          ChatGPT           |    47.87    |    30.85    |    15.96    |
-| **QiZhen-Checkpoint-3500** |  **77.66**  |  **55.32**  |  **40.00**  |
+|   QiZhen-Checkpoint-3500   |    77.66    |    55.32    |    40.00    |
+| **QiZhen-Checkpoint-6000** |  **90.43**  |  **73.40**  |  **65.96**  |
+
+若QiZhen-Checkpoint-6000回复有重复内容（我们正在持续修复这个问题），请将`repetition_penalty`参数调大。
 
 更详细的评测细节和数据后续会开源。
 
