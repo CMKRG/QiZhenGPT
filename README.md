@@ -34,7 +34,7 @@ QiZhen: Tuning LLM Model With Chinese Medical KnowledgeBase and Instructions
 
 |          模型           | 指令数据集 |      Base Model       |                           LoRA下载                           |
 | :---------------------: | :--------: | :-------------------: | :----------------------------------------------------------: |
-| QiZhen- Checkpoint-3500 |    740K    | Chinese-LLaMA-Plus-7B | [百度网盘](链接: https://pan.baidu.com/s/1KQIF-dUsL7Nrj8UeNuFUiw?pwd=ivgg) |
+| QiZhen- Checkpoint-3500 |    740K    | Chinese-LLaMA-Plus-7B | [百度网盘](https://pan.baidu.com/s/1KQIF-dUsL7Nrj8UeNuFUiw?pwd=ivgg) |
 | QiZhen- Checkpoint-6000 |    740K    | Chinese-LLaMA-Plus-7B | [百度网盘](https://pan.baidu.com/s/1KQIF-dUsL7Nrj8UeNuFUiw?pwd=ivgg) |
 
 ## A Quick Start
