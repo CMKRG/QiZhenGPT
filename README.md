@@ -9,7 +9,9 @@ QiZhenGPT: An Open Source Chinese Medical Large Language Model
 
 ### 更新
 
-[2023/05/23] 开源启真医学大模型体验版，旨在提高医学领域药品知识问答的准确性；
+[2023/05/24] 开源启真医学大模型体验版（QiZhen- Checkpoint-6000）；
+
+[2023/05/23] 开源启真医学大模型体验版（QiZhen- Checkpoint-3500），旨在提高医学领域药品知识问答的准确性；
 
 ### 计划
 
@@ -159,5 +161,4 @@ coming soon
 ## Star History
 
 [![Star History Chart](https://api.star-history.com/svg?repos=CMKRG/QiZhenGPT&type=Date)](https://star-history.com/#CMKRG/QiZhenGPT&Date)
-
 
