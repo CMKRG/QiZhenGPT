@@ -167,8 +167,3 @@ python gradio_demo.py
 ## 引用说明
 
 coming soon
-
-## Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=CMKRG/QiZhenGPT&type=Date)](https://star-history.com/#CMKRG/QiZhenGPT&Date)
-
