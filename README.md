@@ -166,4 +166,13 @@ python gradio_demo.py
 
 ## 引用说明
 
-coming soon
+@misc{QiZhenGPT,
+  author={Chang Yao, Guixuan Wang, Junbo Zhao, Sai Wu, Gang Chen, Peng Lu},
+  title = {QiZhenGPT: An Open Source Chinese Medical Large Language Model},
+  year = {2023},
+  publisher = {GitHub},
+  journal = {GitHub repository},
+  howpublished = {\url{https://github.com/CMKRG/QiZhenGPT}},
+}
+
+Technical paper is coming soon.
