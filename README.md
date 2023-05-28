@@ -175,6 +175,6 @@ python gradio_demo.py
   journal = {GitHub repository},
   howpublished = {\url{https://github.com/CMKRG/QiZhenGPT}},
 }
-、、、
+```
 
 Technical paper is coming soon.
