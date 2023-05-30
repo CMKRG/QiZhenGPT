@@ -54,7 +54,7 @@ QiZhenGPT: An Open Source Chinese Medical Large Language Model
 1. 环境安装；
 
 ```bash
-# pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 
 2. 获取Chinese-LLaMA-Plus-7B，详情见[这里](https://github.com/ymcui/Chinese-LLaMA-Alpaca/wiki/%E6%A8%A1%E5%9E%8B%E5%90%88%E5%B9%B6%E4%B8%8E%E8%BD%AC%E6%8D%A2)；
@@ -77,7 +77,7 @@ python gradio_llama_demo.py
 1. 环境安装；
 
 ```bash
-# pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 
 2. 获取ChatGLM-6B，详情见[这里](https://github.com/THUDM/ChatGLM-6B)；
