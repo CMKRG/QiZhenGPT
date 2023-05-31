@@ -9,7 +9,7 @@ QiZhenGPT: An Open Source Chinese Medical Large Language Model
 
 ### 更新
 
-[2023/05/30] 开源[20k](./data/train/sft-20k.json)训练数据；
+[2023/05/30] 开源[20k](./data/train/sft-20k.json)训练数据（该数据集来自于启真医学知识库收集整理的真实医患知识问答数据以及在启真医学知识库的药品文本知识基础上，通过对半结构化数据设置特定的问题模板构造的指令数据）；
 
 [2023/05/30] 开源启真医学大模型体验版（QiZhen-ChatGLM-6B- Checkpoint-2500），旨在提高医学领域药品知识问答的准确性；
 
