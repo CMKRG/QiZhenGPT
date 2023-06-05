@@ -217,7 +217,7 @@ python gradio_cama_demo.py
 项目组成员包括：
 [姚畅](https://person.zju.edu.cn/changyao)，[王贵宣](https://github.com/DendiHust)、[王成](https://github.com/wang9702)
 
-医学支持：[相鹏]()、[丁彦]()、[陈杰]()、[刘康宏]()。
+医学支持：[相鹏]()、[丁彦]()、[陈杰]()、[刘康宏]()
 
 
 ## 致谢
