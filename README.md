@@ -219,6 +219,7 @@ python gradio_cama_demo.py
 
 - [LLaMA](https://github.com/facebookresearch/llama)
 - [Standford Alpaca](https://github.com/tatsu-lab/stanford_alpaca)
+- [CaMA](https://github.com/zjunlp/CaMA)
 - [中文LLaMA & Alpaca大模型](https://github.com/ymcui/Chinese-LLaMA-Alpaca)
 
 
