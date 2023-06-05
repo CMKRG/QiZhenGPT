@@ -215,13 +215,12 @@ python gradio_cama_demo.py
 ## 项目成员
 
 项目组成员包括：
-[姚畅](https://person.zju.edu.cn/changyao)，[王贵宣](https://github.com/DendiHust)、[邹悦]()，[张楚俊]()、[赵俊博](https://person.zju.edu.cn/jkzhao)、[余小益]()、[李宗申]()、[王成](https://github.com/wang9702)、[张适可]()、[许振影]()、[马央君]()、[江智扬]()、[伍赛](https://person.zju.edu.cn/0011057)、[鲁鹏]()、[杨杰]()。
+[姚畅](https://person.zju.edu.cn/changyao)，[王贵宣](https://github.com/DendiHust)、[王成](https://github.com/wang9702)
 
 医学支持：[相鹏]()、[丁彦]()、[陈杰]()、[刘康宏]()。
 
 
 ## 致谢
-同时感谢浙江大学、创业慧康、联众智慧、浙江大学计算机创新技术研究院、浙江大学-网新数字健康联合研究中心、浙江创联网捷公司的其他同事的支持，以及在项目过程中提供的技术、医学、算力等方面的帮助。
 
 此外，本项目基于以下开源项目二次开发，在此对相关项目和研究开发人员表示感谢。
 
