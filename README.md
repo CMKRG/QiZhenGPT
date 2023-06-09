@@ -9,6 +9,8 @@ QiZhenGPT: An Open Source Chinese Medical Large Language Model
 
 ### 更新
 
+[2023/06/09] 开源启真医学大模型体验版（QiZhen-CaMA-13B-Checkpoint-6000），旨在提高医学领域药品知识问答的准确性;
+
 [2023/06/02] 开源启真医学大模型体验版（QiZhen-CaMA-13B-Checkpoint-3600），旨在提高医学领域药品知识问答的准确性;
 
 [2023/05/30] 开源[20k](./data/train/sft-20k.json)训练数据（该数据集来自于启真医学知识库收集整理的真实医患知识问答数据以及在启真医学知识库的药品文本知识基础上，通过对半结构化数据设置特定的问题模板构造的指令数据）；
@@ -26,7 +28,7 @@ QiZhenGPT: An Open Source Chinese Medical Large Language Model
 - [x] 使用指令数据微调ChatGLM-6B，并对开源模型进行评测，发布评测结果；
 - [x] 构造并开源药品知识问答数据集；
 - [x] 使用令数据微调CaMA，并对开源模型进行评测，发布评测结果；
-- [ ] 继续在该指令集训练CaMA，进一步提高模型效果，并将模型进行开源；
+- [x] 继续在该指令集训练CaMA，进一步提高模型效果，并将模型进行开源；
 - [ ] 构造疾病知识指令集，使用该指令集训练新模型，并将模型进行开源；
 - [ ] 使用启真医学知识库文本对LLaMA继续进行预训练，增强LLaMA在中文医疗领域的自然语言处理的基础能力；
 
@@ -52,6 +54,7 @@ QiZhenGPT: An Open Source Chinese Medical Large Language Model
 | QiZhen-Chinese-LLaMA-7B- Checkpoint-6000 |    740K    | Chinese-LLaMA-Plus-7B | [百度网盘](https://pan.baidu.com/s/1KQIF-dUsL7Nrj8UeNuFUiw?pwd=ivgg) |
 |    QiZhen-ChatGLM-6B- Checkpoint-2500    |    740K    |      ChatGLM-6B       | [百度网盘](https://pan.baidu.com/s/1KQIF-dUsL7Nrj8UeNuFUiw?pwd=ivgg) |
 |     QiZhen-CaMA-13B-Checkpoint-3600      |    740K    |         CaMA          | [百度网盘](https://pan.baidu.com/s/1KQIF-dUsL7Nrj8UeNuFUiw?pwd=ivgg) |
+|     QiZhen-CaMA-13B-Checkpoint-6000      |    740K    |         CaMA          | [百度网盘](https://pan.baidu.com/s/1KQIF-dUsL7Nrj8UeNuFUiw?pwd=ivgg) |
 
 ## A Quick Start
 
@@ -193,20 +196,23 @@ python gradio_cama_demo.py
 
 - 标准3：模型答案命中的适应症数目大于等于药品说明书适应症数目的2/3则回答正确；
 
-|                    模型                     | 标准1准确率 | 标准2准确率 | 标准3准确率 |
-| :-----------------------------------------: | :---------: | :---------: | :---------: |
-|                   ChatGLM                   |   39.36%    |   23.16%    |   14.74%    |
-|                   ChatGPT                   |   47.87%    |   30.85%    |   15.96%    |
-|   QiZhen-Chinese-LLaMA-7B-Checkpoint-3500   |   77.66%    |   55.32%    |   40.00%    |
-| **QiZhen-Chinese-LLaMA-7B-Checkpoint-6000** | **90.43%**  | **73.40%**  | **65.96%**  |
-|       QiZhen-CaMA-13B-Checkpoint-3600       |   82.29%    |   60.62%    |   47.92%    |
+|                  模型                   | 标准1准确率 | 标准2准确率 | 标准3准确率 |
+| :-------------------------------------: | :---------: | :---------: | :---------: |
+|                 ChatGLM                 |   39.36%    |   23.16%    |   14.74%    |
+|                 ChatGPT                 |   47.87%    |   30.85%    |   15.96%    |
+| QiZhen-Chinese-LLaMA-7B-Checkpoint-3500 |   77.66%    |   55.32%    |   40.00%    |
+| QiZhen-Chinese-LLaMA-7B-Checkpoint-6000 |   90.43%    |   73.40%    |   65.96%    |
+|     QiZhen-CaMA-13B-Checkpoint-3600     |   82.29%    |   60.62%    |   47.92%    |
+|   **QiZhen-CaMA-13B-Checkpoint-6000**   | **90.43%**  | **80.85%**  | **72.34%**  |
 
 **备注：**
 
 - 若QiZhen-Chinese-LLaMA-7B-Checkpoint-6000：回复有“复读现象”（我们正在持续修复这个问题），请将`repetition_penalty`参数调大；
 - QiZhen-ChatGLM-6B-Checkpoint-2500没有进行评测，因为我们在实验过程中发现ChatGLM在指令微调的过程中不能很好的满足医疗知识事实问答的要求：当要求其回复比较精准时，模型“复读”的现象比较严重；在解决“复读”的问题时，其回答的事实性很差（数据幻想严重）；
 
-- QiZhen-CaMA-13B-Checkpoint-3600：该版本回复内容基本没有“复读”现象，后续我们会增大LoRA部分参数规模，使其测试指标提升上去；
+- QiZhen-CaMA-13B-Checkpoint-3600：该版本回复内容基本没有“复读”现象；
+
+- QiZhen-CaMA-13B-Checkpoint-6000：相较于`QiZhen-CaMA-13B-Checkpoint-3600`我们增大了LoRA的参数量，效果得到了有效的提升；
 
 - 更详细的评测细节和数据后续会开源。
 
