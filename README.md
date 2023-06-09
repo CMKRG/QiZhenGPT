@@ -45,6 +45,7 @@ QiZhenGPT: An Open Source Chinese Medical Large Language Model
 2. QiZhen-Chinese-LLaMA-7B- Checkpoint-6000：本项目基于[Chinese-LLaMA-Plus-7B](https://github.com/ymcui/Chinese-LLaMA-Alpaca)进行指令微调，该项目在7张A800(80G)上进行训练，本次开源的是LoRA权重为训练过程中的第`6000 steps`（训练40h56min）；
 3. QiZhen-ChatGLM-6B- Checkpoint-2500：本项目基于[ChatGLM-6B](https://github.com/THUDM/ChatGLM-6B)进行指令微调，该项目在7张A800(80G)上进行训练，本次开源的是LoRA权重为训练过程中的第`2500 steps`（训练16h20min）；
 4. QiZhen-CaMA-13B-Checkpoint-3600：本项目基于[CaMA-13B](https://github.com/zjunlp/CaMA)进行指令微调，该项目在7张A800(80G)上进行训练，本次开源的是LoRA权重为训练过程中的第`3600 steps`（训练37h37min）。
+5. QiZhen-CaMA-13B-Checkpoint-6000：本项目基于[CaMA-13B](https://github.com/zjunlp/CaMA)进行指令微调，该项目在7张A800(80G)上进行训练，本次开源的是LoRA权重为训练过程中的第`6000 steps`（训练54h30min）。
 
 ## 模型下载
 
