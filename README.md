@@ -1,13 +1,25 @@
-# 启真医学大模型
+# 启真医学大模型 & MedCopilot
+
+## QiZhenGPT
 
 QiZhenGPT: An Open Source Chinese Medical Large Language Model
 
 
 本项目利用[启真医学知识库](http://www.mk-base.com)构建的中文医学指令数据集，并基于此在[Chinese-LLaMA-Plus-7B](https://github.com/ymcui/Chinese-LLaMA-Alpaca)、[CaMA-13B](https://github.com/zjunlp/CaMA)、[ChatGLM-6B](https://github.com/THUDM/ChatGLM-6B)模型上进行指令精调，大幅提高了模型在中文医疗场景下效果，首先针对药品知识问答发布了评测数据集，后续计划优化疾病、手术、检验等方面的问答效果，并针对医患问答、病历自动生成等应用展开拓展。
 
-## 更新记录及计划
+## MedCopilot
+
+`MedCopilot`是一款基于`启真医学大模型`、[启真医学知识库](http://www.mk-base.com)、`医疗临床数据`研发的智慧医疗助手，旨在为患者、医生和医院管理提供全面的智慧支持。通过整合先进的人工智能技术、丰富的医学知识和临床数据，MedCopilot将成为医疗行业的新质生产力。
+
+MedCopilot目前已在[浙江大学第二附属医院正式上线使用](https://mp.weixin.qq.com/s/Pm519Et1POgoerkcdC2YRQ)。
+
+<img src="./pics/medcopilot1.jpg" alt="image-20230525165523821" style="zoom: 53%;" />
+
+## 更新记录
 
 ### 更新
+
+[2024/08/09] 更新MedCopilot相关信息;
 
 [2023/06/27] 开源启真医学大模型体验版（QiZhen-CaMA-13B-Checkpoint-12400），旨在提高医学领域疾病、药品知识问答的准确性;
 
@@ -25,16 +37,38 @@ QiZhenGPT: An Open Source Chinese Medical Large Language Model
 
 [2023/05/23] 开源启真医学大模型体验版（QiZhen-Chinese-LLaMA-7B- Checkpoint-3500），旨在提高医学领域药品知识问答的准确性；
 
-### 计划
+## MedCopilot功能细节
 
-- [x] 使用指令数据微调ChatGLM-6B，并对开源模型进行评测，发布评测结果；
-- [x] 构造并开源药品知识问答数据集；
-- [x] 使用令数据微调CaMA，并对开源模型进行评测，发布评测结果；
-- [x] 继续在该指令集训练CaMA，进一步提高模型效果，并将模型进行开源；
-- [x] 构造疾病知识指令集，使用该指令集训练新模型，并将模型进行开源；
-- [ ] 使用启真医学知识库文本对LLaMA继续进行预训练，增强LLaMA在中文医疗领域的自然语言处理的基础能力；
+### 1. 功能清单助手
 
-## 指令数据集构建
+MedCopilot与 HIS系统和电子病历系统深度融合，利用启真医学大模型分析各个系统数据，自动汇总医生当日重要的工作事项。
+
+1. 入院患者统计与分析；
+2. 手术情况统计与分析；
+3. 会诊情况统计与分析；
+4. 文书书写情况统计与分析；
+5. 重点患者统计与分析；
+
+### 2. 辅助诊疗助手
+
+MedCopilot结合启真医学知识库和患者临床数据，提供个性化诊断和治疗建议，帮助医生做出更准确的医疗决策。
+
+### 3. 医疗质量助手
+
+MedCopilot依据国家医疗质量政策，实时监控医疗过程数据，及时发现和纠正潜在问题，提升整体医疗质量。
+
+### 4. 病历文书助手
+
+MedCopilot综合分析患者诊疗数据，自动生成符合规范的病历文书，减少医生的重复性工作，提高工作效率。
+
+### 5. 其他功能
+
+1. 科研助手：论文解读
+2. 健康助手：报告解读、慢病管理
+
+## QizhenGPT细节
+
+### 指令数据集构建
 
 目前大多数开源的ChatLLM项目使用的是其他模型（如：ChatGPT）生成的指令数据，其不可避免的存在数据幻想的问题，数据幻想问题将严重影响LLM在实际场景中的应用和拓展。因此，本项目为了提高医疗领域的知识问答的准确性，使用如下方式构造指令数据集：
 
@@ -42,7 +76,7 @@ QiZhenGPT: An Open Source Chinese Medical Large Language Model
 2. 药品知识数据：在启真医学知识库的药品文本知识基础上，通过对半结构化数据设置特定的问题模板（如：“{药品}的适应病症是什么？”）构造指令数据集，共计`180K`条指令数据；
 3. 疾病知识数据：在启真医学知识库的疾病文本知识基础上，通过对半结构化数据设置特定的问题模板（如：“{疾病}的典型症状是什么？”）构造指令数据集，共计`298K`条指令数据；
 
-## 训练细节
+### 训练细节
 
 1. QiZhen-Chinese-LLaMA-7B- Checkpoint-3500：本项目基于[Chinese-LLaMA-Plus-7B](https://github.com/ymcui/Chinese-LLaMA-Alpaca)进行指令微调，该项目在7张A800(80G)上进行训练，本次开源的是LoRA权重为训练过程中的第`3500 steps`（训练23h50min）	；
 2. QiZhen-Chinese-LLaMA-7B- Checkpoint-6000：本项目基于[Chinese-LLaMA-Plus-7B](https://github.com/ymcui/Chinese-LLaMA-Alpaca)进行指令微调，该项目在7张A800(80G)上进行训练，本次开源的是LoRA权重为训练过程中的第`6000 steps`（训练40h56min）；
@@ -51,7 +85,7 @@ QiZhenGPT: An Open Source Chinese Medical Large Language Model
 5. QiZhen-CaMA-13B-Checkpoint-6000：本项目基于[CaMA-13B](https://github.com/zjunlp/CaMA)进行指令微调，该项目在7张A800(80G)上进行训练，本次开源的是LoRA权重为训练过程中的第`6000 steps`（训练54h30min）。
 6. QiZhen-CaMA-13B-Checkpoint-12400：本项目基于[CaMA-13B](https://github.com/zjunlp/CaMA)进行指令微调，该项目在6张A800(80G)上进行训练，本次开源的是LoRA权重为训练过程中的第`12400 steps`（训练114h46min）。
 
-## 模型下载
+### 模型下载
 
 |                   模型                   | 指令数据集 |      Base Model       |                           LoRA下载                           |
 | :--------------------------------------: | :--------: | :-------------------: | :----------------------------------------------------------: |
@@ -62,9 +96,9 @@ QiZhenGPT: An Open Source Chinese Medical Large Language Model
 |     QiZhen-CaMA-13B-Checkpoint-6000      |    740K    |         CaMA          | [百度网盘](https://pan.baidu.com/s/1KQIF-dUsL7Nrj8UeNuFUiw?pwd=ivgg) |
 |     QiZhen-CaMA-13B-Checkpoint-12400     |   1038K    |         CaMA          | [百度网盘](https://pan.baidu.com/s/1KQIF-dUsL7Nrj8UeNuFUiw?pwd=ivgg) |
 
-## A Quick Start
+### A Quick Start
 
-### QiZhen-Chinese-LLaMA-7B
+#### QiZhen-Chinese-LLaMA-7B
 
 1. 环境安装；
 
@@ -89,7 +123,8 @@ sh scripts/merge_llama_plus.sh
 python gradio_chinese-llama_demo.py
 ```
 
-### QiZhen-ChatGLM-6B
+#### QiZhen-ChatGLM-6B
+
 1. 环境安装；
 
 ```bash
@@ -107,7 +142,7 @@ pip install -r requirements.txt
 python gradio_chatglm_demo.py
 ```
 
-### QiZhen-CaMA-13B-Checkpoint-3600
+#### QiZhen-CaMA-13B-Checkpoint-3600
 
 1. 环境安装；
 
@@ -126,7 +161,7 @@ pip install -r requirements.txt
 python gradio_cama_demo.py
 ```
 
-## 预研
+### 预研
 
 启真医学大模型坚持“数据+知识双轮驱动”的技术路线，通过大模型技术和医学知识库的紧密结合，融合医疗应用场景中的实际需求，从医学数据治理、医学推理、医患问答、病历自动生成、临床决策辅助支持系统等方面开展迭代研发，助力大模型技术在医疗行业的落地和应用实践。下图是“启真医学知识库辅助大模型生成答案”的案例，该项技术在测试后择机发布。
 
@@ -134,10 +169,9 @@ python gradio_cama_demo.py
 
 <img src="./pics/llm_kg2.jpg" alt="image-20230525165523821" style="zoom: 33%;" />
 
+### 模型效果对比
 
-## 模型效果对比
-
-### 测试1
+#### 测试1
 
 - input：非布司他能治疗什么疾病
 - ChatGLM：非布司他是一种用于治疗哮喘的新药,属于β2受体激动剂。它已经被批准用于治疗以下疾病:  1. 哮喘:非布司他是一种β2受体激动剂,可以刺激β2受体,从而缓解哮喘症状,包括呼吸困难、气促和胸闷。  2. 慢阻肺:非布司他也可以用于缓解慢阻肺引起的症状,包括呼吸急促、气促和咳嗽。  3. 过敏性鼻炎:非布司他可以减轻过敏性鼻炎引起的症状,包括鼻塞、流涕和打喷嚏。  4. 其他疾病:非布司他也被用于治疗其他疾病,如胡萝卜素血症和皮肤划痕症等。  需要注意的是,非布司他是一种药物,其治疗效果和安全性因人而异,最好在医生的指导下使用。
@@ -145,7 +179,7 @@ python gradio_cama_demo.py
 - QiZhen-Chinese-LLaMA-7B- Checkpoint-3500：本品用于痛风患者高尿酸血症的长期治疗。<br />本品为处方药，必须由医生根据病情开处方拿药，并遵医嘱用药，包括用法、用量、用药时间等。不得擅自按照药物说明书自行用药。
 - QiZhen-CaMA-13B-Checkpoint-3600：本品用于痛风患者高尿酸血症的长期治疗。
 
-### 测试2
+#### 测试2
 
 - Input：氟奋乃静癸酸酯注射液的适应症
 
@@ -157,8 +191,7 @@ python gradio_cama_demo.py
 
 - QiZhen-CaMA-13B-Checkpoint-3600：本品用于精神分裂症的各种表现。
 
-
-### 测试3
+#### 测试3
 
 - input：藏青果茶有哪些主要作用？
 
@@ -172,7 +205,7 @@ python gradio_cama_demo.py
 
   藏青果茶可以用于缓解咽喉红肿疼痛、咽干灼热、声音嘶哑等症状。
 
-### 测试4
+#### 测试4
 
 - input：赖特综合征临床表现有哪些？
 
@@ -218,9 +251,9 @@ python gradio_cama_demo.py
   
   4.皮肤黏膜病变：表现为皮肤脂溢性红斑、生殖器红斑、脓疱疹、皮肤脓疱疹、皮肤溃疡。
 
-## 实验评测
+### 实验评测
 
-### 药品适应症评测
+#### 药品适应症评测
 
 评测标准：随机选择`94`种药品数据，按照“{药品}的适应病症”组成指令，分别让ChatGPT（gpt3.5）、ChatGLM、QiZhe做出回答，然后请专业的医学人员对三个`模型的答案`与`该药品的药品说明书`进行比对评分，以下是三个评分标准：
 
@@ -248,7 +281,7 @@ python gradio_cama_demo.py
 - QiZhen-CaMA-13B-Checkpoint-6000：相较于`QiZhen-CaMA-13B-Checkpoint-3600`我们增大了LoRA的参数量，效果得到了有效的提升；
 - 更详细的评测细节和数据后续会开源。
 
-### 疾病评测
+#### 疾病评测
 
 评测标准：随机选择`100`种疾病数据，按照“哪些药物能治疗{疾病}？”、“{疾病}需要做哪些检查？”、“{疾病}的临床表现有哪些？”组成“治疗药物”、“检查检验”、“临床表现”指令，分别让ChatGPT（gpt3.5）、ChatGLM、QiZhen0做出回答，然后请专业的医学人员对三个`模型的答案`与`启真医学知识库疾病知识`进行比对评分，以下是三个评分标准：
 
